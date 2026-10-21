@@ -27,6 +27,22 @@ git push origin v0.1.0
 
 The Release workflow checks that the tag matches the npm package version, runs the application checks, packs the installer, and publishes a GitHub release with the tarball and SHA-256 checksums. It can also be dispatched manually for an existing version tag. A release asset is available independently of the npm registry.
 
+## GitHub Packages
+
+The GitHub Packages workflow publishes a repository-linked mirror named `@user-github-me/mori-study`. The public npm package and its `mori-study` executable keep their existing names.
+
+The Release workflow calls this job after uploading the release assets. To mirror an existing release or retry a failed publication:
+
+```sh
+gh workflow run github-packages.yml --ref main -f tag=v0.1.0
+```
+
+The job downloads the release tarball and its checksum, verifies the archive, and changes the outer package's registry metadata. It keeps the study portal and executable intact. It publishes with GitHub Actions' temporary `GITHUB_TOKEN` and `packages: write`; no additional stored token is required. Lifecycle scripts are disabled when publishing this already-built package.
+
+New GitHub packages start private. For the first publication, open the package's **Package settings → Change visibility → Public**. Confirm it is linked to this repository. Subsequent versions retain the package's visibility and connection.
+
+GitHub's npm registry requires authentication for downloads, including public packages. Keep `npx mori-study init my-study` from npm as the recommended installation path; the GitHub copy also appears in the repository's Packages panel.
+
 ## npm publishing
 
 The public package and CLI are named **`mori-study`**. npm registry availability was checked during initial setup; a name is not reserved until publication succeeds.
