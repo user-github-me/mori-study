@@ -39,7 +39,7 @@ gh workflow run github-packages.yml --ref main -f tag=v0.1.0
 
 The job downloads the release tarball and its checksum, verifies the archive, and changes the outer package's registry metadata. It keeps the study portal and executable intact. It publishes with GitHub Actions' temporary `GITHUB_TOKEN` and `packages: write`; no additional stored token is required. Lifecycle scripts are disabled when publishing this already-built package.
 
-New GitHub packages start private. For the first publication, open the package's **Package settings → Change visibility → Public**. Confirm it is linked to this repository. Subsequent versions retain the package's visibility and connection.
+After the first publication, verify that the package is **Public** and linked to this repository. If it is private, open **Package settings → Change visibility → Public**. Subsequent versions retain the package's visibility and connection.
 
 GitHub's npm registry requires authentication for downloads, including public packages. Keep `npx mori-study init my-study` from npm as the recommended installation path; the GitHub copy also appears in the repository's Packages panel.
 

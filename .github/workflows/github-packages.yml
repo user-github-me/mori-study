@@ -62,5 +62,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api "/users/$GITHUB_REPOSITORY_OWNER/packages?package_type=npm" --jq '.[] | select(.repository.full_name == env.GITHUB_REPOSITORY) | {name, visibility, html_url, repository: .repository.full_name}'
-          echo 'Package publication completed. New GitHub packages start private; set the first publication to Public in Package settings.' >> "$GITHUB_STEP_SUMMARY"
+          gh api "/users/$GITHUB_REPOSITORY_OWNER/packages/npm/mori-study" --jq '{name, visibility, html_url, repository: .repository.full_name}'
+          echo 'Package publication completed. Verify Public visibility in the package metadata above; Package settings provides visibility controls.' >> "$GITHUB_STEP_SUMMARY"
