@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Mori Study'
+  short_description: 'Turn sources into a personal study space'
+  default_prompt: 'Use $mori-study with my attached sources. First understand my learning goal, scope, and requested formats; then create the material with your own model, validate it, and open it in Mori Study. Prioritize useful pictures and minimal text in slides.'

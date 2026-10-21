@@ -1,0 +1,14 @@
+node_modules
+.next
+.mori
+data
+public
+examples/limits-video
+package-lock.json
+next-env.d.ts
+
+calculus-quiz-slides
+packages/mori/template
+website/.next
+website/out
+dist

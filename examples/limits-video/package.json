@@ -1,0 +1,9 @@
+{
+  "name": "mori-video",
+  "private": true,
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.181 check",
+    "preview": "npx --yes hyperframes@0.8.181 preview",
+    "render": "npx --yes hyperframes@0.8.181 render --quality delivery"
+  }
+}

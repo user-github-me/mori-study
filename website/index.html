@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" data-repository="__MORI_REPOSITORY__" data-npm-published="__MORI_NPM_PUBLISHED__">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Give your AI agent a source and a learning goal. It creates lessons, visual slides, quizzes, practice, and more; Mori Study validates and serves your personal study pack."
+    />
+    <meta name="theme-color" content="#f8f9f3" />
+    <meta property="og:title" content="Mori Study — a little clarity, every day" />
+    <meta
+      property="og:description"
+      content="Your sources. Your pace. Your study space. An open-source study portal for your AI agent."
+    />
+    <title>Mori Study — your personal study space</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/dm-sans.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="mori-mark" viewBox="0 0 40 40">
+          <path
+            d="M20 20C4 22 1 9 10 6c7-2 11 6 10 14ZM20 20C18 4 31 1 34 10c2 7-6 11-14 10ZM20 20c16-2 19 11 10 14-7 2-11-6-10-14ZM20 20c2 16-11 19-14 10-2-7 6-11 14-10Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+        <symbol id="external" viewBox="0 0 24 24">
+          <path d="M14 4h6v6m0-6L10 14m0-9H5a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-5" />
+        </symbol>
+        <symbol id="copy" viewBox="0 0 24 24">
+          <rect x="8" y="8" width="12" height="12" rx="2" />
+          <path d="M16 8V4H4v12h4" />
+        </symbol>
+        <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+        <symbol id="book" viewBox="0 0 24 24">
+          <path d="M12 5c-3-2-7-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-3-1-7-1-10 1Zm0 0v15" />
+        </symbol>
+        <symbol id="cards" viewBox="0 0 24 24">
+          <rect x="7" y="6" width="14" height="16" rx="2" />
+          <path d="m4 18-2-14 13-2 1 3m-5 7h6m-6 4h4" />
+        </symbol>
+        <symbol id="slides" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="13" rx="2" />
+          <path d="M12 16v5m-4 0h8M7 8h6m-6 4h10" />
+        </symbol>
+        <symbol id="play" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="m10 8 6 4-6 4Z" />
+        </symbol>
+        <symbol id="quiz" viewBox="0 0 24 24">
+          <path d="m3 6 2 2 4-4m3 2h9m-18 8 2 2 4-4m3 2h9m-9 6h9" />
+        </symbol>
+        <symbol id="leaf" viewBox="0 0 24 24">
+          <path d="M5 20c0-6 4-10 10-12M4 14C1 5 10 3 20 3c0 9-1 16-10 16-3 0-5-2-6-5Z" />
+        </symbol>
+        <symbol id="github" viewBox="0 0 24 24">
+          <path
+            d="M9 19c-4 1-4-2-5-2m10 5v-3.5c0-1 .1-1.4-.5-2 3-.4 6-1.5 6-6A5 5 0 0 0 18 7c.2-1 .2-2-.3-3-1.4 0-2.7.6-3.7 1a13 13 0 0 0-6 0C7 4.6 5.7 4 4.3 4c-.5 1-.5 2-.3 3a5 5 0 0 0-1.5 3.5c0 4.5 3 5.6 6 6-.6.6-.5 1.1-.5 2V22"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="site-header shell">
+      <a href="#" class="brand" aria-label="Mori Study home"
+        ><svg aria-hidden="true"><use href="#mori-mark" /></svg
+        ><span>mori<span class="brand-dot">.</span><small>study</small></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a><a href="#made-for-learning">The study space</a
+        ><a href="#get-started">Get started</a>
+      </nav>
+      <a href="__MORI_REPOSITORY__" class="github-link" target="_blank" rel="noopener noreferrer"
+        ><svg class="icon" aria-hidden="true"><use href="#github" /></svg><span>View on GitHub</span
+        ><svg class="icon small" aria-hidden="true"><use href="#external" /></svg
+      ></a>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-kicker">
+          <span class="live-dot"></span> A LITTLE HELP FOR YOUR NEXT “AHA”
+        </div>
+        <h1 id="hero-title">
+          Your sources. Your pace.<br /><span>Your study space.</span
+          ><svg class="hero-spark" aria-hidden="true" viewBox="0 0 40 40">
+            <path d="M20 2c0 13 5 18 18 18-13 0-18 5-18 18C20 25 15 20 2 20 15 20 20 15 20 2Z" />
+          </svg>
+        </h1>
+        <p class="hero-description">
+          Give your agent the source and the way you want to learn.<br class="desktop-break" />
+          It creates the material. Mori Study gives it a place to live.
+        </p>
+        <div class="hero-actions">
+          <button class="button primary" data-copy-agent>
+            <svg class="icon" aria-hidden="true"><use href="#copy" /></svg>Give Mori Study to your
+            agent<svg class="icon arrow" aria-hidden="true"><use href="#arrow" /></svg></button
+          ><a class="button quiet" href="#study-space"
+            >Take a little look <svg class="icon" aria-hidden="true"><use href="#arrow" /></svg
+          ></a>
+        </div>
+        <p class="hero-note">
+          Works with Claude Code, Codex, and other agents. <span>No extra API key.</span>
+        </p>
+        <div class="source-trail" aria-label="Bring PDFs, photos, class slides, or notes">
+          <span
+            ><svg class="icon" aria-hidden="true"><use href="#book" /></svg>That textbook PDF</span
+          ><span
+            ><svg class="icon" aria-hidden="true"><use href="#cards" /></svg>Your scribbled
+            notes</span
+          ><span
+            ><svg class="icon" aria-hidden="true"><use href="#slides" /></svg>Yesterday’s class
+            slides</span
+          ><span class="source-trail-end"
+            >Start wherever you are.<svg class="trail-arrow" viewBox="0 0 61 24" aria-hidden="true">
+              <path d="M2 3c11 16 30 15 53 9m-8-7 9 7-7 9" /></svg
+          ></span>
+        </div>
+      </section>
+
+      <section
+        class="showcase shell"
+        id="study-space"
+        aria-label="Inside the Mori Study personal reader"
+      >
+        <div class="showcase-mat">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span
+                ><svg class="tiny-mark" aria-hidden="true"><use href="#mori-mark" /></svg> A little
+                room for learning</span
+              ><span class="browser-local"
+                ><span class="live-dot"></span> Runs on your computer</span
+              >
+            </div>
+            <img
+              src="./assets/portal.png"
+              width="1440"
+              height="1249"
+              alt="Mori Study showing a personal calculus reader: the chapter outline on the left, a focused slide about functions, speaker notes, source references, and the next practice step."
+              fetchpriority="high"
+            />
+          </div>
+          <span class="mat-spark mat-spark-one" aria-hidden="true">✳</span
+          ><span class="mat-spark mat-spark-two" aria-hidden="true">✧</span>
+        </div>
+        <p class="screenshot-caption">
+          A real personal study space: your chapter outline, focused slides, and practice one step
+          away.
+        </p>
+      </section>
+
+      <section class="principles shell" aria-label="Mori Study at a glance">
+        <div>
+          <span class="principle-mark"
+            ><svg class="icon" aria-hidden="true"><use href="#leaf" /></svg></span
+          ><strong>Local by nature</strong>
+          <p>Your material lives on your device.</p>
+        </div>
+        <div>
+          <span class="principle-mark">↗</span><strong>Powered by your agent</strong>
+          <p>Use the setup you already have.</p>
+        </div>
+        <div>
+          <span class="principle-mark">∞</span><strong>Yours to keep</strong>
+          <p>Export your work. Own your progress.</p>
+        </div>
+        <div>
+          <span class="principle-mark">{ }</span><strong>Open by design</strong>
+          <p>MIT licensed. Made to make your own.</p>
+        </div>
+      </section>
+
+      <section class="workflow-section section shell" id="how-it-works">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">A SMALL HANDOFF. A BIG DIFFERENCE.</span>
+            <h2>From “where do I start?”<br />to <span class="serif">“I’m getting it.”</span></h2>
+          </div>
+          <p>
+            You bring the curiosity. Your agent does the making.<br />Mori Study gives it all a
+            home.
+          </p>
+        </div>
+        <div class="workflow-grid">
+          <article class="workflow-step">
+            <div class="step-top">
+              <span>01</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-visual source-stack" aria-hidden="true">
+              <span class="paper paper-back"></span
+              ><span class="paper paper-front"
+                ><svg class="icon"><use href="#book" /></svg><i></i><i></i><i></i
+                ><b>Chapter 01</b></span
+              ><span class="paper-label">your starting point</span>
+            </div>
+            <h3>Start in your conversation.</h3>
+            <p>
+              Give your agent a textbook, photos, or class notes. Say what you need and which
+              chapters matter. No portal form required.
+            </p>
+          </article>
+          <article class="workflow-step">
+            <div class="step-top">
+              <span>02</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-visual prompt-visual">
+              <span class="prompt-star" aria-hidden="true">✦</span>
+              <p>“Make brief slides and a quiz<br />from chapters 1–2.3.”</p>
+              <span class="prompt-label">a request to your agent</span>
+            </div>
+            <h3>Let your agent make it.</h3>
+            <p>
+              It understands your goal and scope, reads the sources, and creates the requested
+              material with its own model. One format or several, with references.
+            </p>
+          </article>
+          <article class="workflow-step">
+            <div class="step-top">
+              <span>03</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-visual progress-visual" aria-hidden="true">
+              <div class="mini-check">
+                <svg class="icon"><use href="#check" /></svg>
+              </div>
+              <strong>A little clearer.</strong><span>One idea at a time.</span>
+              <div class="mini-progress"><i></i></div>
+            </div>
+            <h3>Open your study space.</h3>
+            <p>
+              Mori Study validates and serves the finished pack locally. Learn, practice, revisit,
+              and take your materials with you whenever you want.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="formats-section section" id="made-for-learning">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">DIFFERENT WAYS IN. THE SAME LITTLE SPARK.</span>
+              <h2>Made for the way<br /><span class="serif">your mind works.</span></h2>
+            </div>
+            <p>
+              Read it. See it. Test it. Remember it.<br />Let the format meet you where you are.
+            </p>
+          </div>
+          <div class="format-grid">
+            <article class="format-card lesson-card">
+              <span class="format-label"
+                ><svg class="icon" aria-hidden="true"><use href="#book" /></svg> Lessons</span
+              >
+              <div class="lesson-example">
+                <span>01 / LIMITS & CONTINUITY</span>
+                <h3>Getting closer<br />is the point.</h3>
+                <p>A limit tells us where a function<br />is heading as its input gets closer.</p>
+                <div class="example-equation">x → 2 <span>·</span> x² → 4</div>
+                <div class="example-citation"><span></span> Grounded in your source</div>
+              </div>
+              <div class="format-copy">
+                <h3>A little clarity goes a long way.</h3>
+                <p>
+                  Readable explanations, worked examples, math notation, and references you can
+                  return to.
+                </p>
+              </div>
+            </article>
+            <article class="format-card flashcard-card">
+              <span class="format-label"
+                ><svg class="icon" aria-hidden="true"><use href="#cards" /></svg> Flashcards</span
+              ><button
+                class="demo-flashcard"
+                id="demo-flashcard"
+                aria-describedby="flashcard-instruction"
+              >
+                <span class="eyebrow" id="flashcard-side">A LITTLE ACTIVE RECALL</span
+                ><strong id="flashcard-text">What does a<br />derivative tell us?</strong
+                ><span class="flip-label" id="flashcard-instruction"
+                  >Click to turn the card <span aria-hidden="true">↻</span></span
+                >
+              </button>
+              <div class="format-copy">
+                <h3>Help the good ideas stick.</h3>
+                <p>One question at a time. Flip, remember, and save your review progress.</p>
+              </div>
+            </article>
+            <article class="format-card slides-card">
+              <span class="format-label"
+                ><svg class="icon" aria-hidden="true"><use href="#slides" /></svg> Slides</span
+              >
+              <div class="slide-example" aria-hidden="true">
+                <span>THE BIG PICTURE</span><strong>Less to read.<br />More to understand.</strong>
+                <div><i></i><i></i><i></i></div>
+                <span class="slide-number">01 / 03</span>
+              </div>
+              <div class="format-copy">
+                <h3>Give ideas a little room.</h3>
+                <p>
+                  A useful picture, one idea, and room to think. Minimal text on the slide; the
+                  fuller explanation in notes.
+                </p>
+              </div>
+            </article>
+            <article class="format-card quiz-card">
+              <span class="format-label"
+                ><svg class="icon" aria-hidden="true"><use href="#quiz" /></svg> Quizzes &amp;
+                practice</span
+              >
+              <div class="quiz-example">
+                <span class="eyebrow">TRY A LITTLE QUESTION</span>
+                <h3>What is the derivative of x²?</h3>
+                <div class="demo-answers" role="group" aria-label="Practice question answers">
+                  <button data-demo-answer="incorrect" aria-pressed="false">
+                    <span>A</span> x²</button
+                  ><button data-demo-answer="correct" aria-pressed="false">
+                    <span>B</span> 2x
+                  </button>
+                </div>
+                <p class="quiz-feedback" id="quiz-feedback" role="status">
+                  No timer. Take your time.
+                </p>
+              </div>
+              <div class="format-copy">
+                <h3>Find your next “I knew that.”</h3>
+                <p>
+                  Check a concept with a quiz, or try open-ended practice with hints and worked
+                  solutions.
+                </p>
+              </div>
+            </article>
+            <article class="format-card video-card">
+              <span class="format-label"
+                ><svg class="icon" aria-hidden="true"><use href="#play" /></svg> Short videos</span
+              >
+              <div class="video-example" aria-hidden="true">
+                <span class="video-orbit orbit-one"></span
+                ><span class="video-orbit orbit-two"></span
+                ><span class="video-play"
+                  ><svg class="icon"><use href="#play" /></svg></span
+                ><span class="video-equation">a new perspective.</span
+                ><span class="video-label">MADE WITH HYPERFRAMES</span>
+              </div>
+              <div class="format-copy">
+                <h3>See it in a different light.</h3>
+                <p>
+                  Short explainers with transcripts. The built-in HyperFrames template renders
+                  silent videos locally.
+                </p>
+                <a
+                  class="video-watch"
+                  href="./assets/limits.mp4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Watch the 30-second example <span aria-hidden="true">↗</span></a
+                ><a
+                  class="video-watch transcript-link"
+                  href="./assets/limits-transcript.txt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Read transcript</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="export-note">
+            <svg class="icon" aria-hidden="true"><use href="#external" /></svg>
+            <p>
+              Your learning travels with you.
+              <strong
+                >Whole-pack PowerPoint, Markdown, JSON, flashcard CSV, and print to PDF.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="setup-section section shell" id="get-started">
+        <div class="setup-copy">
+          <span class="eyebrow">A FAMILIAR AGENT. A FRESH START.</span>
+          <h2>Give your agent<br /><span class="serif">a place to teach.</span></h2>
+          <p>
+            Hand it this repository, your sources, and a little direction.<br />Your agent
+            understands the request, creates your materials, and opens your study space.
+          </p>
+          <div class="setup-points">
+            <span
+              ><svg class="icon" aria-hidden="true"><use href="#check" /></svg> No account to
+              create</span
+            ><span
+              ><svg class="icon" aria-hidden="true"><use href="#check" /></svg> No new model API
+              key</span
+            ><span
+              ><svg class="icon" aria-hidden="true"><use href="#check" /></svg> Your existing agent
+              does the generating</span
+            >
+          </div>
+          <a class="text-link" href="./llms.txt"
+            >Instructions for agents <svg class="icon" aria-hidden="true"><use href="#arrow" /></svg
+          ></a>
+        </div>
+        <div class="install-card">
+          <div class="install-tabs" role="tablist" aria-label="Installation method">
+            <button
+              id="tab-agent"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-agent"
+              tabindex="0"
+            >
+              With your agent <span>recommended</span></button
+            ><button
+              id="tab-terminal"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-terminal"
+              tabindex="-1"
+            >
+              In your terminal
+            </button>
+          </div>
+          <div id="panel-agent" class="install-panel" role="tabpanel" aria-labelledby="tab-agent">
+            <div class="install-panel-heading">
+              <span>01 / COPY THIS LITTLE PROMPT</span
+              ><button class="copy-small" data-copy-agent aria-label="Copy setup prompt">
+                <svg class="icon" aria-hidden="true"><use href="#copy" /></svg>Copy
+              </button>
+            </div>
+            <label for="agent-prompt" class="sr-only">Full setup prompt for your AI agent</label
+            ><textarea id="agent-prompt" spellcheck="false" readonly></textarea>
+            <div class="agent-hint">
+              <span class="hint-mark" aria-hidden="true">✧</span>
+              <p>
+                <strong>02 / PASTE IT INTO YOUR AGENT</strong>Claude Code, Codex, or another agent
+                with terminal access. Then bring something you want to learn.
+              </p>
+            </div>
+          </div>
+          <div
+            id="panel-terminal"
+            class="install-panel"
+            role="tabpanel"
+            aria-labelledby="tab-terminal"
+            hidden
+          >
+            <div class="install-panel-heading">
+              <span>REQUIRES NODE.JS 22.16+</span
+              ><button
+                class="copy-small"
+                id="copy-commands"
+                aria-label="Copy terminal setup commands"
+              >
+                <svg class="icon" aria-hidden="true"><use href="#copy" /></svg>Copy
+              </button>
+            </div>
+            <pre class="terminal-commands"><code id="terminal-commands"></code></pre>
+            <div class="release-notice" id="unpublished-note">
+              <span class="release-dot"></span>
+              <p>
+                <strong>Local setup is available now.</strong>The npm package is not published yet.
+                Use the repository commands above.
+              </p>
+            </div>
+            <div class="package-install" id="published-note" hidden>
+              <p>Or get started with the published package:</p>
+              <button id="copy-package">
+                <code>npx mori-study init my-study</code
+                ><svg class="icon" aria-hidden="true"><use href="#copy" /></svg></button
+              ><a
+                href="https://www.npmjs.com/package/mori-study"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View package <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </div>
+          <div class="release-install" id="release-install" hidden>
+            <span class="eyebrow">OR INSTALL FROM A GITHUB RELEASE</span
+            ><button id="copy-release">
+              <code id="release-command"></code
+              ><svg class="icon" aria-hidden="true"><use href="#copy" /></svg>
+            </button>
+            <p>This uses the published archive directly, without an npm registry package.</p>
+          </div>
+          <div class="install-bottom">
+            <svg class="tiny-mark" aria-hidden="true"><use href="#mori-mark" /></svg
+            ><span>A few small steps. A whole space to grow.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section shell section" aria-labelledby="faq-heading">
+        <div class="faq-heading">
+          <span class="eyebrow">A FEW THINGS YOU MIGHT BE WONDERING</span>
+          <h2 id="faq-heading">A little more <span class="serif">context.</span></h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>
+              Does Mori Study generate the study material itself?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Your existing AI agent first understands your learning goal, scope, and desired
+              formats, then reads your sources and creates the material with its own model. Mori
+              Study validates, stores, serves, and exports the result. Start directly in your agent
+              conversation; a portal request is optional. Nothing generates in the background.
+            </p>
+          </details>
+          <details>
+            <summary>What can I use as a source?<span aria-hidden="true">+</span></summary>
+            <p>
+              PDFs, photos, text, Markdown, DOCX, and PPTX. Mori Study extracts text from supported
+              documents. Scanned pages, photos, diagrams, and complex formatting need an agent with
+              the right vision or document tools. The skill asks the agent to verify your source and
+              keep the requested chapter range.
+            </p>
+          </details>
+          <details>
+            <summary>Where does my data go?<span aria-hidden="true">+</span></summary>
+            <p>
+              The portal runs on your computer. Sources and courses are stored in the local project,
+              and progress is saved in your browser with a backup option. Your agent still processes
+              the sources according to its own provider and privacy settings. This introduction
+              website does not collect your study material.
+            </p>
+          </details>
+          <details>
+            <summary>Can I export and keep my work?<span aria-hidden="true">+</span></summary>
+            <p>
+              Yes. Export the whole study pack to PowerPoint: lessons, visual slides, quiz answers,
+              worked practice, flashcards, video references, and sources. Text stays editable;
+              pictures and equations are embedded images. You can also export Markdown, course JSON,
+              flashcard CSV, or print to PDF. Videos and progress backups remain separate. JSON
+              imports need matching sources in the destination workspace.
+            </p>
+          </details>
+          <details>
+            <summary>Is it free and open source?<span aria-hidden="true">+</span></summary>
+            <p>
+              Mori Study’s code and original study examples are MIT licensed. Run it, modify it, and
+              contribute. Your AI agent may have its own subscription or usage costs; Mori Study
+              does not add a model service. Optional video rendering uses HyperFrames and FFmpeg,
+              with their own licenses.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="closing-section shell">
+        <div class="closing-mark" aria-hidden="true">
+          <svg><use href="#mori-mark" /></svg>
+        </div>
+        <span class="eyebrow">START WITH ONE LITTLE IDEA.</span>
+        <h2>A calmer space.<br /><span class="serif">A clearer mind.</span></h2>
+        <p>Your next “aha” moment starts wherever you are.</p>
+        <button class="button primary" data-copy-agent>
+          Let’s learn something<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg>
+        </button>
+      </section>
+    </main>
+    <footer class="site-footer shell">
+      <a class="brand footer-brand" href="#" aria-label="Mori Study home"
+        ><svg aria-hidden="true"><use href="#mori-mark" /></svg
+        ><span>mori<span class="brand-dot">.</span><small>study</small></span></a
+      >
+      <p>A little understanding, every day.</p>
+      <div>
+        <a href="__MORI_REPOSITORY__" target="_blank" rel="noopener noreferrer">GitHub</a
+        ><a href="__MORI_REPOSITORY__/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"
+          >MIT License</a
+        ><a href="./llms.txt">For agents</a><a href="./assets/THIRD_PARTY.md">Notices</a>
+      </div>
+    </footer>
+    <div class="copy-status" id="copy-status" role="status" aria-live="polite" hidden>
+      <svg class="icon" aria-hidden="true"><use href="#check" /></svg><span></span>
+    </div>
+    <noscript
+      ><p class="noscript-message">
+        Copy buttons need JavaScript.
+        <a href="./llms.txt">Open the plain-text setup instructions</a> to give Mori Study to your
+        agent.
+      </p></noscript
+    >
+  </body>
+</html>

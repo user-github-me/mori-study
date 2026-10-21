@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc"><title id="title">The graph of absolute value has different one-sided slopes at zero</title><desc id="desc">An exact V-shaped graph of f(x)=absolute value of x has left slope negative one and right slope positive one. The graph is continuous at zero, but the two slopes disagree, so the derivative there does not exist.</desc><style>text{font-family:Arial,Helvetica,sans-serif;fill:#283f35}.eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;fill:#748576}.heading{font-size:29px;font-weight:700;letter-spacing:-.6px}.label{font-size:23px;font-weight:600}.small{font-size:19px;fill:#6b7a6f}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}</style><defs></defs><rect width="800" height="600" rx="28" fill="#fbfaf6"/><rect x="1" y="1" width="798" height="598" rx="27" fill="none" stroke="#e7e8df"/>
+<text x="48" y="42" class="eyebrow">DERIVATIVES · A CORNER CASE</text><text x="48" y="84" class="heading">Continuous, but not smooth.</text>
+<g stroke="#e7eade" stroke-width="1.5"><path d="M120 190H690M120 270H690M120 350H690"/><path d="M240 145V440M320 145V440M480 145V440M560 145V440"/></g>
+<path d="M120 430H697M400 466V142" class="line" stroke="#899688" stroke-width="2"/>
+<path d="M160 190L400 430" class="line" stroke="#9584ad" stroke-width="5"/><path d="M400 430L640 190" class="line" stroke="#6f8d68" stroke-width="5"/>
+<circle cx="400" cy="430" r="8" fill="#3c5544" stroke="#fbfaf6" stroke-width="3"/>
+<text x="400" y="461" class="small" text-anchor="middle">0</text><text x="708" y="438" class="label">x</text><text x="390" y="132" class="label">y</text>
+<text x="225" y="462" class="small">−2</text><text x="554" y="462" class="small">2</text><text x="641" y="164" class="label">|x|</text>
+<rect x="98" y="315" width="188" height="52" rx="15" fill="#eee9f3"/><text x="192" y="348" class="label" text-anchor="middle">Left slope −1</text>
+<rect x="514" y="315" width="193" height="52" rx="15" fill="#e8efdf"/><text x="610" y="348" class="label" text-anchor="middle">Right slope +1</text>
+<rect x="48" y="520" width="704" height="51" rx="15" fill="#f1f0e7"/><text x="400" y="553" class="label" text-anchor="middle">No single tangent slope at x = 0.</text>
+</svg>

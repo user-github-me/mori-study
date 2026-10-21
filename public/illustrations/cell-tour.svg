@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">A simplified photosynthetic plant cell</title><desc id="desc">A schematic plant cell shows a supporting outer cell wall, an inner plasma membrane, a nucleus, a large central vacuole, a chloroplast, and a mitochondrion. The drawing is a simplified organizational diagram, not a microscopic scale drawing.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#283f35}.eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;fill:#748576}.heading{font-size:29px;font-weight:700;letter-spacing:-.6px}.label{font-size:23px;font-weight:600}.small{font-size:19px;fill:#6b7a6f}.number{font-size:34px;font-weight:600}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}</style><defs></defs><rect width="800" height="600" rx="28" fill="#fbfaf6"/><rect x="1" y="1" width="798" height="598" rx="27" fill="none" stroke="#e7e8df"/>
+
+<text x="48" y="42" class="eyebrow">CELL BIOLOGY · A GUIDED LOOK</text><text x="48" y="84" class="heading">A photosynthetic plant cell</text><text x="48" y="116" class="small">A simplified map of its working parts.</text>
+<rect x="197" y="159" width="405" height="326" rx="73" fill="#e5ebd7" stroke="#76926d" stroke-width="9"/><rect x="211" y="173" width="377" height="298" rx="62" fill="#f1f0d9" stroke="#a6b592" stroke-width="3"/>
+<ellipse cx="432" cy="339" rx="111" ry="99" fill="#dce9e7" stroke="#abc8c2" stroke-width="3"/>
+<circle cx="289" cy="249" r="45" fill="#e1dbeb" stroke="#b0a1c5" stroke-width="3"/><circle cx="292" cy="252" r="17" fill="#b9a8cd"/>
+<g transform="translate(510 216) rotate(-19)"><ellipse rx="47" ry="27" fill="#bacfa5" stroke="#6d8f64" stroke-width="3"/><g fill="none" stroke="#799960" stroke-width="4" stroke-linecap="round"><path d="M-23-9H-8M-23-1H-8M-23 7H-8M8-9H23M8-1H23M8 7H23"/><path d="M-8 0H8" stroke-width="2"/></g></g>
+<g transform="translate(287 420) rotate(15)"><ellipse rx="43" ry="25" fill="#ead0b4" stroke="#be9373" stroke-width="3"/><path d="M-28 2C-23-17-13 14-7-4S5 13 11-3S21 9 29-1" class="line" stroke="#b18268" stroke-width="3"/></g>
+<g fill="#d6dbbc"><circle cx="366" cy="210" r="5"/><circle cx="338" cy="431" r="4"/><circle cx="551" cy="387" r="5"/><circle cx="242" cy="342" r="5"/><circle cx="544" cy="292" r="4"/></g>
+<g class="line" stroke="#8a9789" stroke-width="1.7"><path d="M147 206H198L249 231"/><path d="M146 335H192"/><path d="M626 157L589 168L544 199"/><path d="M630 361H559L537 353"/><path d="M210 503L225 467L255 429"/><path d="M610 511L581 482L572 447"/></g>
+<text x="48" y="211" class="label">Nucleus</text><text x="48" y="341" class="label">Cell wall</text><text x="565" y="147" class="label">Chloroplast</text><text x="634" y="368" class="label">Vacuole</text><text x="48" y="508" class="label">Mitochondrion</text><text x="594" y="534" class="label">Membrane</text>
+<text x="48" y="565" class="small">Compartments give different jobs a place to happen.</text>
+
+</svg>

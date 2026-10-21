@@ -1,0 +1,43 @@
+{
+  "name": "mori-study",
+  "version": "0.1.0",
+  "description": "Create a local study portal and install the Mori Study skill for your AI agent.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user-github-me/mori-study.git",
+    "directory": "packages/mori"
+  },
+  "homepage": "https://github.com/user-github-me/mori-study#readme",
+  "bugs": {
+    "url": "https://github.com/user-github-me/mori-study/issues"
+  },
+  "bin": {
+    "mori-study": "bin/mori.mjs"
+  },
+  "files": [
+    "bin/",
+    "template/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "build": "node ../../scripts/package.mjs build",
+    "prepack": "node ../../scripts/package.mjs build"
+  },
+  "keywords": [
+    "study",
+    "ai-agent",
+    "codex",
+    "claude",
+    "flashcards",
+    "local-first"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

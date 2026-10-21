@@ -1,0 +1,50 @@
+name: Introduction website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - 'scripts/build-site.mjs'
+      - 'docs/portal.png'
+      - 'docs/THIRD_PARTY.md'
+      - 'public/fonts/**'
+      - 'docs/licenses/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Build the introduction site
+        run: node scripts/build-site.mjs
+        env:
+          MORI_REPOSITORY: https://github.com/${{ github.repository }}
+          MORI_SITE_BASE_PATH: /${{ github.event.repository.name }}
+          MORI_NPM_PUBLISHED: ${{ vars.MORI_NPM_PUBLISHED }}
+          MORI_RELEASE_PUBLISHED: ${{ vars.MORI_RELEASE_PUBLISHED }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/site
+      - uses: actions/deploy-pages@v4
+        id: deployment

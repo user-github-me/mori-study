@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Secant and tangent slopes on y equals x squared</title><desc id="desc">The parabola y=x squared passes through P at one, one and Q at three, nine. The secant through P and Q has slope four. The tangent at Q has slope six. The plotted curve and both lines use the same exact coordinate transform.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#283f35}.eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;fill:#748576}.heading{font-size:29px;font-weight:700;letter-spacing:-.6px}.label{font-size:23px;font-weight:600}.small{font-size:19px;fill:#6b7a6f}.number{font-size:34px;font-weight:600}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}</style><defs></defs><rect width="800" height="600" rx="28" fill="#fbfaf6"/><rect x="1" y="1" width="798" height="598" rx="27" fill="none" stroke="#e7e8df"/>
+
+<text x="48" y="42" class="eyebrow">CALCULUS · TWO KINDS OF CHANGE</text><text x="48" y="84" class="heading">Across an interval. At an instant.</text>
+<g stroke="#e5e9df" stroke-width="1.5"><path d="M110 134H710 M110 218H710 M110 358H710"/><path d="M270 126V470 M430 126V470 M590 126V470"/></g>
+<path d="M110 123V470H715" class="line" stroke="#879788" stroke-width="2"/>
+<g class="small" text-anchor="middle"><text x="110" y="498">0</text><text x="270" y="498">1</text><text x="430" y="498">2</text><text x="590" y="498">3</text></g><g class="small" text-anchor="end"><text x="92" y="365">4</text><text x="92" y="225">9</text><text x="92" y="141">12</text></g>
+<text x="727" y="477" class="label">x</text><text x="103" y="112" class="label">y</text>
+<path d="M230 470L670 162" class="line" stroke="#8190af" stroke-width="3.5" stroke-dasharray="9 8"/>
+<path d="M350 470L670 134" class="line" stroke="#bf876d" stroke-width="4"/>
+<path d="M110 470Q390 470 670 127" class="line" stroke="#57795c" stroke-width="5"/>
+<circle cx="270" cy="442" r="8" fill="#57795c" stroke="#fbfaf6" stroke-width="3"/><circle cx="590" cy="218" r="8" fill="#57795c" stroke="#fbfaf6" stroke-width="3"/>
+<rect x="164" y="385" width="105" height="39" rx="11" fill="#fbfaf6"/><text x="217" y="412" class="label" text-anchor="middle">P (1, 1)</text>
+<rect x="605" y="224" width="118" height="41" rx="11" fill="#fbfaf6"/><text x="664" y="252" class="label" text-anchor="middle">Q (3, 9)</text>
+<text x="681" y="121" class="label" fill="#57795c">x²</text>
+<rect x="48" y="526" width="338" height="47" rx="14" fill="#e9edf3"/><path d="M68 550H99" stroke="#8190af" stroke-width="3.5" stroke-dasharray="6 5"/><text x="113" y="557" font-size="22" font-weight="600">Secant slope = 4</text>
+<rect x="402" y="526" width="350" height="47" rx="14" fill="#f2e7dd"/><path d="M422 550H453" stroke="#bf876d" stroke-width="4"/><text x="467" y="557" font-size="22" font-weight="600">Tangent at 3: slope 6</text>
+
+</svg>

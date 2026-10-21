@@ -1,0 +1,57 @@
+{
+  "name": "mori-study",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first study space, powered by your AI agent.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "mori": "tsx scripts/mori.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "test:browser": "playwright test",
+    "video": "node scripts/video.mjs",
+    "format": "prettier --write src scripts tests skills docs *.md *.json *.ts .github/workflows",
+    "package:build": "node scripts/package.mjs build",
+    "package:check": "tsx --test tests/package.test.ts",
+    "build:site": "node scripts/build-site.mjs",
+    "mori-study": "tsx scripts/mori.ts"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "gsap": "3.14.2",
+    "katex": "^0.19.0",
+    "lucide-react": "^0.468.0",
+    "mathjax-full": "^3.2.2",
+    "next": "^16.0.0",
+    "pdfjs-dist": "^6.2.108",
+    "pptxgenjs": "^4.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "katex": "$katex",
+    "@xmldom/xmldom": "^0.9.12",
+    "image-size": "^2.0.4"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  }
+}

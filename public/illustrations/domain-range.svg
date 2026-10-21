@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">The domain and range of the square function</title><desc id="desc">The parabola y=x squared has its minimum at (0,0). The horizontal domain extends through all real x. The vertical range begins at zero and extends upward: [0,infinity). Marked points (-2,4) and (2,4) show that opposite inputs share the same nonnegative output. The plotted curve and points use the same exact coordinate transform.</desc>
+<!-- Original Mori Study explanatory diagram. MIT licensed. -->
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#283f35}.eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;fill:#748576}.heading{font-size:29px;font-weight:700;letter-spacing:-.6px}.label{font-size:23px;font-weight:600}.small{font-size:19px;fill:#6b7a6f}.number{font-size:30px;font-weight:600}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}</style><defs></defs>
+<rect width="800" height="600" rx="28" fill="#fbfaf6"/><rect x="1" y="1" width="798" height="598" rx="27" fill="none" stroke="#e7e8df"/>
+<text x="48" y="42" class="eyebrow">FUNCTIONS · DOMAIN &amp; RANGE</text>
+<text x="48" y="84" class="heading">Any real input. No negative output.</text>
+<text x="48" y="122" class="small">f(x) = x²</text>
+<g stroke="#e5e9df" stroke-width="1.5"><path d="M90 250H710 M90 430H710"/><path d="M180 145V430 M620 145V430"/></g>
+<path d="M400 149V475" class="line" stroke="#d5dbcf" stroke-width="2"/>
+<path d="M90 430H710" class="line" stroke="#648567" stroke-width="3"/>
+<path d="M100 423L90 430L100 437 M700 423L710 430L700 437" class="line" stroke="#648567" stroke-width="3"/>
+<path d="M400 430V143 M393 153L400 143L407 153" class="line" stroke="#bf876d" stroke-width="3"/>
+<path d="M125 148.75Q400 711.25 675 148.75" class="line" stroke="#57795c" stroke-width="5"/>
+<circle cx="400" cy="430" r="7" fill="#bf876d" stroke="#fbfaf6" stroke-width="2"/>
+<circle cx="180" cy="250" r="6" fill="#57795c" stroke="#fbfaf6" stroke-width="2"/><circle cx="620" cy="250" r="6" fill="#57795c" stroke="#fbfaf6" stroke-width="2"/>
+<g class="small" text-anchor="middle"><text x="180" y="461">−2</text><text x="400" y="461">0</text><text x="620" y="461">2</text></g>
+<text x="382" y="257" class="small" text-anchor="end">4</text><text x="380" y="179" class="small" text-anchor="end">y</text><text x="724" y="437" class="label">x</text>
+<rect x="453" y="307" width="228" height="49" rx="14" fill="#f2e7dd"/><text x="567" y="339" class="label" text-anchor="middle">Lowest output: 0</text>
+<path d="M489 363L414 419" class="line" stroke="#bf876d" stroke-width="2"/>
+<rect x="48" y="507" width="342" height="63" rx="16" fill="#e7ede1"/><text x="219" y="534" class="small" text-anchor="middle">DOMAIN · ALL REAL x</text><text x="219" y="560" class="label" text-anchor="middle">(−∞, ∞)</text>
+<rect x="410" y="507" width="342" height="63" rx="16" fill="#f2e7dd"/><text x="581" y="534" class="small" text-anchor="middle">RANGE · y ≥ 0</text><text x="581" y="560" class="label" text-anchor="middle">[0, ∞)</text>
+</svg>

@@ -1,0 +1,4 @@
+Card entrance timing adapted from HyperFrames grid-card-assemble.
+Copyright 2026 HeyGen, Inc. Licensed under Apache-2.0.
+https://github.com/heygen-com/hyperframes
+Mori modifications: scene layout, content input, and reveal schedule.

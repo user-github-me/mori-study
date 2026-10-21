@@ -1,0 +1,27 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:10.000
+Getting closer is the point.
+A limit describes what the output approaches as the input gets closer to a value. For f(x) = x², inputs near 2 give outputs near 4.
+x → 2      ·      x² → 4
+From the left: 1.9² = 3.61
+Closer still: 1.99² = 3.9601
+From the right: 2.01² = 4.0401
+
+2
+00:00:10.000 --> 00:00:20.000
+Two sides. One destination.
+A finite two-sided limit exists when the left-hand and right-hand limits exist and agree. For x² near 2, both sides approach 4.
+Left → 4       =       Right → 4
+Same value: The two-sided limit exists.
+Different values: The two-sided limit does not exist.
+
+3
+00:00:20.000 --> 00:00:30.000
+The limit can survive a hole.
+This expression equals x + 2 when x ≠ 2. It is undefined at 2, yet its limit as x approaches 2 is still 4.
+(x² − 4) / (x − 2) = x + 2,  x ≠ 2
+At x = 2: The expression is undefined.
+Near x = 2: The output approaches 4.
+

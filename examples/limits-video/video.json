@@ -1,0 +1,63 @@
+{
+  "title": "Limits, in a little moment",
+  "scenes": [
+    {
+      "title": "Getting closer is the point.",
+      "eyebrow": "01 / The idea",
+      "body": "A limit describes what the output approaches as the input gets closer to a value. For f(x) = x², inputs near 2 give outputs near 4.",
+      "formula": "x → 2      ·      x² → 4",
+      "citation": "Original calculus example notes · 1.3 Limits and continuity",
+      "duration": 10,
+      "cards": [
+        {
+          "label": "From the left",
+          "text": "1.9² = 3.61"
+        },
+        {
+          "label": "Closer still",
+          "text": "1.99² = 3.9601"
+        },
+        {
+          "label": "From the right",
+          "text": "2.01² = 4.0401"
+        }
+      ]
+    },
+    {
+      "title": "Two sides. One destination.",
+      "eyebrow": "02 / Check both sides",
+      "body": "A finite two-sided limit exists when the left-hand and right-hand limits exist and agree. For x² near 2, both sides approach 4.",
+      "formula": "Left → 4       =       Right → 4",
+      "citation": "Original calculus example notes · 1.3 Limits and continuity",
+      "duration": 10,
+      "cards": [
+        {
+          "label": "Same value",
+          "text": "The two-sided limit exists."
+        },
+        {
+          "label": "Different values",
+          "text": "The two-sided limit does not exist."
+        }
+      ]
+    },
+    {
+      "title": "The limit can survive a hole.",
+      "eyebrow": "03 / A useful distinction",
+      "body": "This expression equals x + 2 when x ≠ 2. It is undefined at 2, yet its limit as x approaches 2 is still 4.",
+      "formula": "(x² − 4) / (x − 2) = x + 2,  x ≠ 2",
+      "citation": "Original calculus example notes · 1.3 Limits and continuity",
+      "duration": 10,
+      "cards": [
+        {
+          "label": "At x = 2",
+          "text": "The expression is undefined."
+        },
+        {
+          "label": "Near x = 2",
+          "text": "The output approaches 4."
+        }
+      ]
+    }
+  ]
+}
