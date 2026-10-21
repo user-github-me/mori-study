@@ -23,7 +23,13 @@ Agents: start with [INSTALL.md](INSTALL.md). If this repository is already check
 
 ## Start locally
 
-Requires **Node.js 22.16+** and npm.
+Requires **Node.js 22.16+** and npm. Create a study workspace with:
+
+```sh
+npx mori-study init my-study
+```
+
+Or run from source:
 
 ```sh
 git clone https://github.com/user-github-me/mori-study.git
@@ -49,7 +55,7 @@ npm run mori-study -- install --agent all --global
 
 ## Install a release package
 
-After the first release is published, this single command installs from its exact GitHub release asset:
+This command installs from the exact GitHub release asset:
 
 ```sh
 npx --yes --package=https://github.com/user-github-me/mori-study/releases/download/v0.1.0/mori-study-0.1.0.tgz mori-study init my-study
@@ -57,7 +63,7 @@ npx --yes --package=https://github.com/user-github-me/mori-study/releases/downlo
 
 The lightweight `mori-study` launcher creates a local portal, installs dependencies and agent skills, then opens it. `--no-install`, `--no-open`, and `--agent codex|claude|all|none` support automated setup. It refuses to overwrite existing work. You can also download the tarball from [Releases](https://github.com/user-github-me/mori-study/releases) and use it offline after dependencies are available.
 
-The public package is **`mori-study`**, and its CLI command is **`mori-study`**. After npm publication, you can use `npx mori-study init my-study`. Until then, use the Git clone or exact GitHub release installer above.
+The published package and CLI are both **`mori-study`**. Create a workspace with `npx mori-study init my-study`. Inside an existing workspace, use `npm run mori-study -- <command>`. The Git clone and versioned GitHub release installers are also available.
 
 ## How it works
 

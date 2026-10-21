@@ -45,7 +45,7 @@ npx --yes --package=https://github.com/user-github-me/mori-study/releases/downlo
 
 This creates the workspace, installs its dependencies and skills, and opens the portal. Use `--no-install --no-open` to prepare files only, or `--agent codex|claude|all|none` to choose a skill target.
 
-After npm publication, use `npx mori-study init my-study` for the registry installer. Until then, use the exact GitHub release URL or Git clone flow above. The unscoped name `mori` is an unrelated project; our package and CLI are `mori-study`.
+Use `npx mori-study init my-study` from outside an existing Mori Study workspace for the published npm installer. The exact GitHub release URL and Git clone flow above are also available. Inside an existing workspace, run `npm run mori-study -- <command>`. The unscoped name `mori` is an unrelated project; our package and CLI are `mori-study`.
 
 ## Moving a workspace
 
